@@ -8,6 +8,8 @@ The objectives of this assignment are to use existing tools for quality assessme
 ### Data: 
 Each of you will be working with 2 of the demultiplexed file pairs. For all steps below, process the two libraries separately. Library assignments are here: ```/projects/bgmp/shared/Bi623/QAA_data_assignments.txt```
 
+My particular files are: ```29_4E_fox_S21_L008	8_2F_fox_S7_L008```
+
 The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_sequencing/demultiplexed/```
 
 ## Do not move, copy, or unzip these data!
