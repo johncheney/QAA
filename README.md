@@ -18,6 +18,21 @@ The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_
 
 1. Using ```FastQC``` via the command line on Talapas, produce plots of quality score distributions for R1 and R2 reads. Also, produce plots of the per-base N content, and comment on whether or not they are consistent with the quality score plots.
 
+29_4E_fox_S21_L008 R1
+<img width="682" alt="Screen Shot 2021-09-01 at 15 30 43" src="https://user-images.githubusercontent.com/71104613/131753818-3cb1acf6-c305-4df6-999f-68b7da818fee.png">
+<img width="671" alt="Screen Shot 2021-09-01 at 15 31 45" src="https://user-images.githubusercontent.com/71104613/131753896-8b22b921-588a-45ae-9091-f64142270085.png">
+29_4E_fox_S21_L008 R2
+<img width="678" alt="Screen Shot 2021-09-01 at 15 32 13" src="https://user-images.githubusercontent.com/71104613/131753952-97ff403a-1d51-4b8e-8bc0-6846ca4a2b3c.png">
+<img width="675" alt="Screen Shot 2021-09-01 at 15 32 33" src="https://user-images.githubusercontent.com/71104613/131753985-a7246531-8128-4d6c-a427-0830fdcb355c.png">
+8_2F_fox_S7_L008 R1
+<img width="683" alt="Screen Shot 2021-09-01 at 15 33 01" src="https://user-images.githubusercontent.com/71104613/131754030-8803e48b-6366-4242-badd-773c919cedd3.png">
+<img width="678" alt="Screen Shot 2021-09-01 at 15 33 17" src="https://user-images.githubusercontent.com/71104613/131754048-3c717562-fd66-4d8f-b583-4d43d7cac734.png">
+8_2F_fox_S7_L008 R2
+<img width="694" alt="Screen Shot 2021-09-01 at 15 33 44" src="https://user-images.githubusercontent.com/71104613/131754091-7909be76-f163-4923-a2d8-c7be5abebc88.png">
+<img width="689" alt="Screen Shot 2021-09-01 at 15 34 02" src="https://user-images.githubusercontent.com/71104613/131754134-ef1535f0-2614-4d8b-8b93-157affc14b00.png">
+
+
+
 2. Run your quality score plotting script from your Demultiplexing assignment from Bi622. Describe how the ```FastQC``` quality score distribution plots compare to your own. If different, propose an explanation. Also, does the runtime differ? If so, why?
 
 3. Comment on the overall data quality of your two libraries.
