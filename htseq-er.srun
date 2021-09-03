@@ -1,0 +1,22 @@
+#!/usr/bin/bash 
+
+#SBATCH --partition=bgmp        ### Partition 
+#SBATCH --job-name=job         ### Job Name 
+#SBATCH --output=htseq%j    ### File in which to store job output  
+#SBATCH --time=0-02:00:00       
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --account=bgmp 
+
+htseq-count --stranded=yes Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a1Aligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf > HTS_S_yes_8_2F.tsv 
+
+
+htseq-count --stranded=no Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a1Aligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf > HTS_S_no_8_2F.tsv
+
+
+
+htseq-count --stranded=no Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9aAligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf  > HTS_S_no_29_4E.tsv
+
+
+
+htseq-count --stranded=yes Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9aAligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf > HTS_S_yes_29_4E.tsv

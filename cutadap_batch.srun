@@ -1,0 +1,26 @@
+#!/usr/bin/bash 
+
+#SBATCH --partition=bgmp        ### Partition 
+#SBATCH --job-name=cutadapt         ### Job Name 
+#SBATCH --output=cutadapt%j    ### File in which to store job output  
+#SBATCH --time=1-00:00:00       
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --account=bgmp 
+
+
+8_R1 = "/projects/bgmp/shared/2017_sequencing/demultiplexed/8_2F_fox_S7_L008_R1_001.fastq.gz"
+8_R2 = "/projects/bgmp/shared/2017_sequencing/demultiplexed/8_2F_fox_S7_L008_R2_001.fastq.gz"
+29_R1 = "/projects/bgmp/shared/2017_sequencing/demultiplexed/29_4E_fox_S21_L008_R1_001.fastq.gz"
+29_R2 = "/projects/bgmp/shared/2017_sequencing/demultiplexed/29_4E_fox_S21_L008_R2_001.fastq.gz"
+
+ADAPTER_FWD= "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+ADAPTER_REV= "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+
+# cutadapt -a ADAPTER_FWD -A ADAPTER_REV -o out.1.fastq -p out.2.fastq reads.1.fastq reads.2.fastq
+
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o 8_2F_fox_S7_L008_R1_001.out.1.fastq -p 8_2F_fox_S7_L008_R2_001.out.2.fastq /projects/bgmp/shared/2017_sequencing/demultiplexed/8_2F_fox_S7_L008_R1_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/8_2F_fox_S7_L008_R2_001.fastq.gz -j 0
+
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o 29_4E_fox_S21_L008_R1_001.out.1.fastq -p 29_4E_fox_S21_L008_R2_001.out.2.fastq /projects/bgmp/shared/2017_sequencing/demultiplexed/29_4E_fox_S21_L008_R1_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/29_4E_fox_S21_L008_R2_001.fastq.gz -j 0 
+
+

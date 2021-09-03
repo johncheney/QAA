@@ -1,0 +1,16 @@
+#!/usr/bin/bash 
+
+#SBATCH --partition=bgmp        ### Partition 
+#SBATCH --job-name=star         ### Job Name 
+#SBATCH --output=output_star    ### File in which to store job output  
+#SBATCH --time=0-02:00:00       
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=1 
+#SBATCH --account=bgmp
+#SBATCH --cpus-per-task=8 
+
+conda activate bgmp_py39
+
+/usr/bin/time -v STAR --runThreadN 8 --runMode genomeGenerate --genomeDir /projects/bgmp/jcheney7/QAA/alignment/Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a --genomeFastaFiles /projects/bgmp/jcheney7/QAA/alignment/mouse_fasta/Mus_musculus.GRCm39.dna.primary_assembly.fa --sjdbGTFfile /projects/bgmp/jcheney7/QAA/alignment/mouse_fasta/Mus_musculus.GRCm39.104.gtf
+
+exit

@@ -1,0 +1,21 @@
+#!/usr/bin/bash 
+
+#SBATCH --partition=bgmp        ### Partition 
+#SBATCH --job-name=trimmo         ### Job Name 
+#SBATCH --output=trimmo%j    ### File in which to store job output  
+#SBATCH --time=1-00:00:00       
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --account=bgmp 
+
+trimmomatic PE -threads 4 ../cutadapt/29_4E_fox_S21_L008_R1_001.out.1.fastq ../cutadapt/29_4E_fox_S21_L008_R2_001.out.2.fastq  \
+              29_4E_fox_S21_L008_R1_001.out.1.trimmed.fastq 29_4E_fox_S21_L008_R1_001.out.1.untrimmed.fastq \
+              29_4E_fox_S21_L008_R2_001.out.2.trimmed.fastq 29_4E_fox_S21_L008_R2_001.out.2.un.trimmed.fastq \
+              LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:35 
+
+trimmomatic PE -threads 4 ../cutadapt/8_2F_fox_S7_L008_R1_001.out.1.fastq ../cutadapt/8_2F_fox_S7_L008_R2_001.out.2.fastq  \
+              8_2F_fox_S7_L008_R1_001.out.1.trimmed.fastq 8_2F_fox_S7_L008_R1_001.out.1.un.trimmed.fastq \
+              8_2F_fox_S7_L008_R2_001.out.2.trimmed.fastq 8_2F_fox_S7_L008_R2_001.out.2.un.trimmed.fastq \
+              LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:35 
+
+#LEADING:3 TRAILING:3 MINLEN:35 

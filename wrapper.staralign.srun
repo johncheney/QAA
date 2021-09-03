@@ -1,0 +1,33 @@
+#!/usr/bin/bash 
+
+#SBATCH --partition=bgmp        ### Partition 
+#SBATCH --job-name=star         ### Job Name 
+#SBATCH --output=output_star    ### File in which to store job output  
+#SBATCH --time=0-02:00:00       
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --account=bgmp 
+
+conda activate bgmp_QAA
+
+/usr/bin/time -v STAR --runThreadN 8 --runMode alignReads \
+    --outFilterMultimapNmax 3 \
+    --outSAMunmapped Within KeepPairs \
+    --alignIntronMax 1000000 --alignMatesGapMax 1000000 \
+    --readFilesCommand zcat \
+    --readFilesIn /projects/bgmp/jcheney7/QAA/Trimmo/29_4E_fox_S21_L008_R1_001.out.1.trimmed.fastq.gz /projects/bgmp/jcheney7/QAA/Trimmo/29_4E_fox_S21_L008_R2_001.out.2.trimmed.fastq.gz \
+    --genomeDir /projects/bgmp/jcheney7/QAA/alignment/Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a \
+    --outFileNamePrefix Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a
+
+STAR --runThreadN 8 --runMode alignReads \
+    --outFilterMultimapNmax 3 \
+    --outSAMunmapped Within KeepPairs \
+    --alignIntronMax 1000000 --alignMatesGapMax 1000000 \
+    --readFilesCommand zcat \
+    --readFilesIn /projects/bgmp/jcheney7/QAA/Trimmo/8_2F_fox_S7_L008_R1_001.out.1.trimmed.fastq.gz /projects/bgmp/jcheney7/QAA/Trimmo/8_2F_fox_S7_L008_R2_001.out.2.trimmed.fastq.gz \
+    --genomeDir /projects/bgmp/jcheney7/QAA/alignment/Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a \
+    --outFileNamePrefix Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a1
+
+exit 
+
+ 
