@@ -112,6 +112,43 @@ both libraries are honestly very good in my opinion. Qscores are higher than I'v
 
 10. Count reads that map to features using htseq-count. You should run htseq-count twice: once with ```--stranded=yes``` and again with ```--stranded=no```. Use default parameters otherwise.
 
+```
+
+htseq-count --stranded=yes Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a1Aligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf > HTS_S_yes_8_2F.tsv 
+
+__no_feature	30658192
+__ambiguous	26184
+__too_low_aQual	61684
+__not_aligned	1222586
+__alignment_not_unique	1588617
+
+
+htseq-count --stranded=no Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9a1Aligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf > HTS_S_no_8_2F.tsv
+
+__no_feature	3148692
+__ambiguous	1555558
+__too_low_aQual	61684
+__not_aligned	1222586
+__alignment_not_unique	1588617
+
+
+htseq-count --stranded=yes Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9aAligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf > HTS_S_yes_29_4E.tsv
+
+__no_feature	1811726
+__ambiguous	1334   *****
+__too_low_aQual	3642
+__not_aligned	56506
+__alignment_not_unique	87551
+
+htseq-count --stranded=no Mus_musculus.GRCm39.dna.primary_assembly.ens104.STAR_2.7.9aAligned.out.sam ./mouse_fasta/Mus_musculus.GRCm39.104.gtf  > HTS_S_no_29_4E.tsv
+
+__no_feature	119362
+__ambiguous	98624   *****
+__too_low_aQual	3642
+__not_aligned	56506
+__alignment_not_unique	87551
+```
+
 11. Demonstrate convincingly whether or not the data are from “strand-specific” RNA-Seq libraries. Include any comands/scripts used. Briefly describe your evidence, using quantitative statements (e.g. "I propose that these data are/are not strand-specific, because X% of the reads are y, as opposed to z.").
 
     *Hint* - recall ICA4 from Bi621.
