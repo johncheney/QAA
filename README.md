@@ -110,6 +110,18 @@ both libraries are honestly very good in my opinion. Qscores are higher than I'v
     
 9. Using your script from PS8 in Bi621, report the number of mapped and unmapped reads from each of your 2 sam files. Make sure that your script is looking at the bitwise flag to determine if reads are primary or secondary mapping (update your script if necessary).
 
+```
+29_4E_fox_S21_L008
+
+mapped read total 3966649
+unmapped read total 116941
+
+8_2F_fox_S7_L008
+
+mapped read total 67070958
+unmapped read total 2511364
+```
+
 10. Count reads that map to features using htseq-count. You should run htseq-count twice: once with ```--stranded=yes``` and again with ```--stranded=no```. Use default parameters otherwise.
 
 ```
@@ -150,6 +162,10 @@ __alignment_not_unique	87551
 ```
 
 11. Demonstrate convincingly whether or not the data are from “strand-specific” RNA-Seq libraries. Include any comands/scripts used. Briefly describe your evidence, using quantitative statements (e.g. "I propose that these data are/are not strand-specific, because X% of the reads are y, as opposed to z.").
+
+```
+I propose that these data are not strand-specific, because 93.8% of the reads have no feature when stranded=yes is selected, as opposed to 6.1% when stranded=no is selected in the 29_4E sample.
+```
 
     *Hint* - recall ICA4 from Bi621.
 
