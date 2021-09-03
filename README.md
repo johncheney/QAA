@@ -89,6 +89,12 @@ both libraries are honestly very good in my opinion. Qscores are higher than I'v
 
     - *Sanity check*: Use your Unix skills to search for the adapter sequences in your datasets and confirm the expected sequence orientations. Report the commands you used, the reasoning behind them, and how you confirmed the adapter sequences.
 
+```
+ One example of how I checked for adapter sequences was the following unix command: 
+ cat 8_2F_fox_S7_L008_R1_001.out.1.fastq | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" | head 
+ I used this to search for that adapter sequence in any of the lines, but I wouldn't have known where to begin, to look for the sequence itself. 
+```
+
 6. Use ```Trimmomatic``` to quality trim your reads. Specify the following, in this order:
     - LEADING: quality of 3
     - TRAILING: quality of 3
