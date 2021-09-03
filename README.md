@@ -35,7 +35,11 @@ The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_
 <img width="694" alt="Screen Shot 2021-09-01 at 15 33 44" src="https://user-images.githubusercontent.com/71104613/131754091-7909be76-f163-4923-a2d8-c7be5abebc88.png">
 <img width="689" alt="Screen Shot 2021-09-01 at 15 34 02" src="https://user-images.githubusercontent.com/71104613/131754134-ef1535f0-2614-4d8b-8b93-157affc14b00.png">
 
-2. Run your quality score plotting script from your Demultiplexing assignment from Bi622. Describe how the ```FastQC``` quality score distribution plots compare to your own. If different, propose an explanation. Also, does the runtime differ? If so, why?
+2. Run your quality score plotting script from your Demultiplexing assignment from Bi622. Describe how the ```FastQC``` quality score distribution plots compare to your own. If different, propose an explanation. Also, does the runtime differ? If so, why? 
+
+```
+The amount of time it took to run my plotting script was considerably slower than the fastqc plot generation. It takes a while to do the same thing in Python, while Java might just be comparably faster, since that's what fastqc is programmed in.
+``` 
 
 
 29_4E_fox_S21_L008 R1
@@ -57,6 +61,10 @@ The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_
 
 3. Comment on the overall data quality of your two libraries.
 
+```
+both libraries are honestly very good in my opinion. Qscores are higher than I've seen as of now. 
+```
+
 # Part 2 – Adaptor trimming comparison
 
 4. Create a new conda environment called ```QAA``` and install ```cutadapt``` and ```Trimmomatic```. Google around if you need a refresher on how to create conda environments. Make sure you check your installations with:
@@ -64,6 +72,8 @@ The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_
     -  ```trimmomatic -version``` (should be 0.39)
 
 5. Using ```cutadapt```, properly trim adapter sequences from your assigned files. Be sure to read how to use ```cutadapt```. Use default settings. What proportion of reads (both forward and reverse) were trimmed?
+
+
 
     <details>
     <summary>Try to determine what the adapters are on your own. If you cannot (or if you do, and want to confirm), click here to see the actual adapter sequences used.</summary>
