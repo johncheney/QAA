@@ -35,9 +35,25 @@ The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_
 <img width="694" alt="Screen Shot 2021-09-01 at 15 33 44" src="https://user-images.githubusercontent.com/71104613/131754091-7909be76-f163-4923-a2d8-c7be5abebc88.png">
 <img width="689" alt="Screen Shot 2021-09-01 at 15 34 02" src="https://user-images.githubusercontent.com/71104613/131754134-ef1535f0-2614-4d8b-8b93-157affc14b00.png">
 
-
-
 2. Run your quality score plotting script from your Demultiplexing assignment from Bi622. Describe how the ```FastQC``` quality score distribution plots compare to your own. If different, propose an explanation. Also, does the runtime differ? If so, why?
+
+
+29_4E_fox_S21_L008 R1
+
+![29_R1_out](https://user-images.githubusercontent.com/71104613/131964714-0d931736-7346-46b7-84e6-4b880c38a681.png)
+
+29_4E_fox_S21_L008 R2
+
+![29_R2_out](https://user-images.githubusercontent.com/71104613/131964723-f8caadc5-cd18-4a67-90f5-21e8c6f95679.png)
+
+8_2F_fox_S7_L008 R1
+
+![8_R1_out](https://user-images.githubusercontent.com/71104613/131964676-fc19d61f-5d3e-48cb-82c5-76657029fea0.png)
+
+8_2F_fox_S7_L008 R2
+
+![8_R2_out](https://user-images.githubusercontent.com/71104613/131964687-2ef6904b-c35c-4949-8bb7-aa0b9f488a32.png)
+
 
 3. Comment on the overall data quality of your two libraries.
 
