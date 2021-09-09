@@ -8,7 +8,7 @@ The objectives of this assignment are to use existing tools for quality assessme
 ### Data: 
 Each of you will be working with 2 of the demultiplexed file pairs. For all steps below, process the two libraries separately. Library assignments are here: ```/projects/bgmp/shared/Bi623/QAA_data_assignments.txt```
 
-My particular files are: ```29_4E_fox_S21_L008	8_2F_fox_S7_L008```
+My particular files begin with: ```29_4E_fox_S21_L008 and 8_2F_fox_S7_L008```
 
 The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_sequencing/demultiplexed/```
 
@@ -18,9 +18,9 @@ The demultiplexed, gzipped .fastq files are here: ```/projects/bgmp/shared/2017_
 
 1. Using ```FastQC``` via the command line on Talapas, produce plots of quality score distributions for R1 and R2 reads. Also, produce plots of the per-base N content, and comment on whether or not they are consistent with the quality score plots.
 
-```
+
 The per-base N content plots appear to be be consistent with the quality score distributions.  
-```
+
 
 29_4E_fox_S21_L008 R1
 
@@ -41,9 +41,9 @@ The per-base N content plots appear to be be consistent with the quality score d
 
 2. Run your quality score plotting script from your Demultiplexing assignment from Bi622. Describe how the ```FastQC``` quality score distribution plots compare to your own. If different, propose an explanation. Also, does the runtime differ? If so, why? 
 
-```
+
 The amount of time it took to run my plotting script was considerably slower than the fastqc plot generation. It takes a while to do the same thing in Python, while Java might just be comparably faster, since that's what fastqc is programmed in.
-``` 
+ 
 
 
 29_4E_fox_S21_L008 R1
@@ -65,9 +65,9 @@ The amount of time it took to run my plotting script was considerably slower tha
 
 3. Comment on the overall data quality of your two libraries.
 
-```
-both libraries are honestly very good in my opinion. Qscores are higher than I've seen as of now. 
-```
+
+Both libraries are honestly very good in my opinion. Qscores are higher than I've seen as of now. 
+
 
 # Part 2 – Adaptor trimming comparison
 
@@ -89,11 +89,11 @@ both libraries are honestly very good in my opinion. Qscores are higher than I'v
 
     - *Sanity check*: Use your Unix skills to search for the adapter sequences in your datasets and confirm the expected sequence orientations. Report the commands you used, the reasoning behind them, and how you confirmed the adapter sequences.
 
-```
+
  One example of how I checked for adapter sequences was the following unix command: 
  cat 8_2F_fox_S7_L008_R1_001.out.1.fastq | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" | head 
  I used this to search for that adapter sequence in any of the lines, but I wouldn't have known where to begin, to look for the sequence itself. 
-```
+
 
 6. Use ```Trimmomatic``` to quality trim your reads. Specify the following, in this order:
     - LEADING: quality of 3
@@ -105,9 +105,9 @@ both libraries are honestly very good in my opinion. Qscores are higher than I'v
 
 7. Plot the trimmed read length distributions for both R1 and R2 reads (on the same plot). You can produce 2 different plots for your 2 different RNA-seq samples. There are a number of ways you could possibly do this. One useful thing your plot should show, for example, is whether R1s are trimmed more extensively than R2s, or vice versa. Comment on whether you expect R1s and R2s to be adapter-trimmed at different rates. 
 
-```
+
 I expect the R2s to be adapter-trimmed at a higher rate than the R1s. 
-```
+
 
 # Part 3 – Alignment and strand-specificity
 8. Install sofware. In your QAA environment, use conda to install:
@@ -177,9 +177,9 @@ __alignment_not_unique	87551
 
 11. Demonstrate convincingly whether or not the data are from “strand-specific” RNA-Seq libraries. Include any comands/scripts used. Briefly describe your evidence, using quantitative statements (e.g. "I propose that these data are/are not strand-specific, because X% of the reads are y, as opposed to z.").
 
-```
+
 I propose that these data are not strand-specific, because 93.8% of the reads have no feature when stranded=yes is selected, as opposed to 6.1% when stranded=no is selected in the 29_4E sample.
-```
+
 
     *Hint* - recall ICA4 from Bi621.
 
