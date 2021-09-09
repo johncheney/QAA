@@ -1,5 +1,7 @@
 # RNA-seq Quality Assessment Assignment - Bi 623 (Summer 2021)
 
+#See this README.md well as (QAA/QAA.pdf)
+
 Be sure to upload all relevant materials by the deadline and **double check** to be sure that your off-line repository is up-to-date with your on-line repository. Answers to the questions can be submitted as Github markdown or ```pdf```.
 
 ## Objectives
